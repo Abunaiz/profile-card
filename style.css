@@ -1,0 +1,125 @@
+:root {
+  --color1: hsl(185, 75%, 39%); /*Dark cyan*/
+  --color2: hsl(229, 23%, 23%); /*Very dark desaturated blue*/
+  --color3: hsl(227, 10%, 46%); /*Dark grayish blue*/
+  --neutral-color1: hsl(0, 4%, 83%); /*Dark gray*/
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(./images/bg-pattern-top.svg),
+    url(./images/bg-pattern-bottom.svg);
+  background-color: var(--color1);
+  background-repeat: no-repeat, no-repeat;
+  background-size: 80%, 80%;
+  background-position: -164% 142%, 225% -86%;
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 18px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 350px;
+  min-height: 374px;
+  background-color: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background-clip: padding-box;
+}
+
+.card::after {
+  height: 140px;
+  width: 100%;
+  background-image: url(./images/bg-pattern-card.svg);
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: '';
+}
+
+.photo-box {
+  z-index: 10;
+  background-color: #fff;
+  width: 106px;
+  height: 106px;
+  margin-top: 87px;
+  border-radius: 50%;
+  border: 5px #fff solid;
+  overflow: hidden;
+  background-clip: padding-box; /*It does not work*/
+}
+
+.photo {
+  width: 100%;
+  /* object-fit: cover; */
+}
+
+.name,
+.age {
+  font-size: 18px;
+  margin-top: 20px;
+}
+.age {
+  margin-left: 12px;
+}
+
+.city {
+  font-size: 15px;
+  margin-top: 10px;
+  border-bottom: 1px var(--neutral-color1) solid;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.age,
+.number {
+  color: var(--color2);
+  font-weight: 700;
+}
+
+.age,
+.city,
+.category {
+  color: var(--color3);
+  font-weight: 400;
+}
+
+.category {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  width: 71%;
+  margin-top: 28px;
+  text-align: center;
+}
+
+/*Mobile*/
+@media (max-width: 480px) {
+  body {
+    background-size: 200%, 200%;
+    background-position: 145% 500%, -45% -400%;
+    background-blend-mode: soft-light;
+  }
+  .card {
+    width: 326px;
+  }
+}
